@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import HeaderWrapper from "./Header.style";
 import navbarApi from "../../assets/api/navbarApi";
+import Countdown from "../Countdown";
 
 const Header = () => {
   return (
@@ -16,7 +17,11 @@ const Header = () => {
                 </NavLink>
 
                 <ul className="navbar-nav left_ui_block ml-auto d-flex justify-content-center align-items-center flex-row">
-                  <div className="left_ui_block_hide"></div>
+                  <div className="left_ui_block_hide">
+                    <li>
+                      <Countdown />
+                    </li>
+                  </div>
                 </ul>
               </nav>
             </div>

@@ -56,7 +56,7 @@ const CountdownWrapper = styled.div`
 
   .base-timer__path-elapsed {
     stroke-width: 7px;
-    stroke: ${(props) => props.theme.body.BodyLine};
+    stroke: ${(props) => props.theme.body.BodyPrimaryLine};
   }
 
   .base-timer__label {
@@ -89,7 +89,7 @@ const CountdownWrapper = styled.div`
   }
 
   .base-timer__path-remaining.color {
-    color: ${(props) => props.theme.body.BodyBrand};
+    color: ${(props) => props.theme.body.BodyMain};
   }
 `;
 

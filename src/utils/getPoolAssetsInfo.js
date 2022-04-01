@@ -22,23 +22,28 @@ export const getPoolAssetsInfo = async (Token) => {
 
     await market.loadReserves();
 
-    var usdcReserve = market.reserves.find(
-      (res) => res.config.symbol === Token
-    );
+    let TokenPoolAssetsInfoObjet = [];
+    for (let i = 0; i < market.reserves.length; i++) {
+      const assetReserve = market.reserves[i];
 
-    const TokenPoolAssetsInfoObjet = {
-      AssetName: usdcReserve.stats.symbol,
-      LTV: getFullPercent(usdcReserve.stats.loanToValueRatio.toString()),
-      TotalSupply: getParsedAmount(
-        usdcReserve.stats.totalDepositsWads.toString()
-      ),
-      SupplyAPY: getFullPercent(usdcReserve.stats.supplyInterestAPY.toString()),
-      TotalBorrowed: getParsedAmount(
-        usdcReserve.stats.totalBorrowsWads.toString()
-      ),
-    };
+      const resultObject = {
+        AssetName: assetReserve.stats.symbol,
+        LTV: getFullPercent(assetReserve.stats.loanToValueRatio.toString()),
+        TotalSupply: getParsedAmount(
+          assetReserve.stats.totalDepositsWads.toString()
+        ),
+        SupplyAPY: getFullPercent(
+          assetReserve.stats.supplyInterestAPY.toString()
+        ),
+        TotalBorrowed: getParsedAmount(
+          assetReserve.stats.totalBorrowsWads.toString()
+        ),
+      };
 
-    await market.loadRewards();
+      TokenPoolAssetsInfoObjet.push(resultObject);
+    }
+
+    console.log(TokenPoolAssetsInfoObjet);
 
     return TokenPoolAssetsInfoObjet;
   } catch (err) {

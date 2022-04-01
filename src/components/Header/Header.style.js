@@ -41,7 +41,7 @@ const HeaderWrapper = styled.div`
               color: ${(props) => props.theme.body.BodyPrimary};
               font-style: normal;
               font-weight: 700;
-              font-size: 18px;
+              font-size: 22px;
               line-height: 25px;
               text-align: center;
               padding-bottom: 10px;

@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CountdownWrapper from "./Countdown.style";
 import { useDispatch } from "react-redux";
-import { getPoolAssetsInfoFun } from "../../redux/actions/lp_function";
-import * as anchor from "@project-serum/anchor";
-import { SolendMarket } from "@solendprotocol/solend-sdk";
-import { NETWORK } from "../../lib/constants/common";
-
-const { Connection } = anchor.web3;
+import { getPoolAssetsInfo } from "../../utils/getPoolAssetsInfo";
 
 const FULL_DASH_ARRAY = 283;
 
@@ -18,15 +13,16 @@ let timeLeft = TIME_LIMIT;
 const Countdown = () => {
   const dispatch = useDispatch();
   const [count, setCount] = useState();
-  const connection = new Connection(NETWORK, "processed");
 
   const RefreshTokenPriceList = async () => {
     try {
       timePassed = 0;
       timeLeft = TIME_LIMIT;
-      const market = await SolendMarket.initialize(connection);
-      market.refreshAll();
-      // dispatch(getPoolAssetsInfoFun());
+      const PoolAssetsObj = await getPoolAssetsInfo();
+      dispatch({
+        type: "SEND_POOL_ASSETS_INFO",
+        payload: PoolAssetsObj,
+      });
     } catch (error) {}
   };
 
