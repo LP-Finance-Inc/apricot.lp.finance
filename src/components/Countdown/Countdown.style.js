@@ -14,7 +14,7 @@ const CountdownWrapper = styled.div`
       visibility: hidden;
       width: auto;
       padding: 1rem 0.7rem;
-      background: ${(props) => props.theme.body.BodyNeutral};
+      background: hsla(0, 0%, 100%, 0.1);
       color: white;
       text-align: center;
       border-radius: 6px;
@@ -40,7 +40,7 @@ const CountdownWrapper = styled.div`
       border-style: solid;
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       border-color: transparent transparent
-        ${(props) => props.theme.body.BodyLine} transparent;
+        ${(props) => props.theme.body.BodyPrimaryLine} transparent;
     }
 
     &:hover .countdown_tooltip {
