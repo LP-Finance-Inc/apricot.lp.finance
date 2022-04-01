@@ -36,9 +36,6 @@ export const getPoolAssetsInfo = async (Token) => {
       TotalBorrowed: getParsedAmount(
         usdcReserve.stats.totalBorrowsWads.toString()
       ),
-      BorrowAPY: getParsedAmount(
-        usdcReserve.stats.cumulativeBorrowRateWads.toString()
-      ),
     };
 
     await market.loadRewards();
@@ -51,7 +48,6 @@ export const getPoolAssetsInfo = async (Token) => {
       TotalSupply: 0,
       SupplyAPY: 0,
       TotalBorrowed: 0,
-      BorrowAPY: 0,
     };
 
     return TokenPoolAssetsInfoObjet;

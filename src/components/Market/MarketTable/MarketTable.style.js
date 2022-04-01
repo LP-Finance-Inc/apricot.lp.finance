@@ -2,77 +2,96 @@ import styled from "styled-components";
 
 const MarketTableWrapper = styled.div`
   .assets {
-    .title {
-      span {
-        color: ${(props) => props.theme.body.BodyPrimary};
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 1.5715;
-      }
-    }
+    .assets_card {
+      border: 1px solid ${(props) => props.theme.body.BodyMainLine};
+      border-radius: 5px;
+      backdrop: filer(20px);
+      background-color: rgba(31, 24, 37, 0.5);
+      padding: 40px 30px 16px;
 
-    .assets_table {
-      .Table_card {
-        border-top: 1px solid ${(props) => props.theme.body.BodyLine};
-
-        .table td,
-        .table th {
-          border-top: 0px solid #dee2e6;
+      .title {
+        span {
+          font-weight: 700;
+          background: linear-gradient(
+            66.62deg,
+            #c65cff -11.4%,
+            #ba6bff -0.23%,
+            #9991ff 21.09%,
+            #6cf 49.22%,
+            #42f0db 89.89%,
+            #3fc 113.21%
+          );
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 1.5715;
         }
+      }
 
-        table {
-          width: 100%;
-
-          thead {
-            tr {
-              th {
-                border-bottom: 0px solid white;
-                vertical-align: middle !important;
-                color: ${(props) => props.theme.body.BodySecondary};
-                font-size: 13px;
-                font-weight: 400;
-                line-height: 16px;
-              }
-            }
+      .assets_table {
+        .Table_card {
+          .table td,
+          .table th {
+            border-top: 0px solid #dee2e6;
           }
 
-          tbody {
-            tr {
-              cursor: pointer;
-              height: 4.5rem;
-              vertical-align: middle;
-              transition: all 200ms;
+          table {
+            width: 100%;
 
-              td {
-                vertical-align: middle !important;
-                font-size: 0.98rem;
+            thead {
+              tr {
+                th {
+                  border-bottom: 1px solid
+                    ${(props) => props.theme.body.BodyPrimaryLine};
+                  vertical-align: middle !important;
+                  color: ${(props) => props.theme.body.BodySecondary};
+                  font-size: 13px;
+                  font-weight: 400;
+                  line-height: 16px;
+                  padding-bottom: 30px;
+                }
+              }
+            }
 
-                .table_list {
-                  img {
-                    height: auto;
-                    width: 1.8rem;
-                  }
+            tbody {
+              tr {
+                cursor: pointer;
+                height: 4.5rem;
+                vertical-align: middle;
+                transition: all 200ms;
 
-                  p {
-                    color: ${(props) => props.theme.body.BodyPrimary};
-                    font-size: 14px;
-                    font-weight: 400;
-                    line-height: 24px;
-                  }
+                td {
+                  vertical-align: middle !important;
+                  font-size: 0.98rem;
 
-                  .token_name {
-                    span {
-                      color: ${(props) => props.theme.body.BodySecondary};
-                      font-size: 12px;
-                      font-weight: 500;
-                      line-height: 16px;
+                  .table_list {
+                    img {
+                      height: auto;
+                      width: 1.8rem;
+                    }
+
+                    p {
+                      color: ${(props) => props.theme.body.BodyPrimary};
+                      font-size: 15px;
+                      font-weight: 400;
+                      line-height: 24px;
+                    }
+
+                    .token_name {
+                      span {
+                        color: ${(props) => props.theme.body.BodySecondary};
+                        font-size: 12px;
+                        font-weight: 500;
+                        line-height: 16px;
+                      }
                     }
                   }
                 }
-              }
 
-              &:hover {
-                background: ${(props) => props.theme.body.BodyNeutralAlt};
+                &:hover {
+                  background: rgba(31, 24, 37, 0.8);
+                }
               }
             }
           }

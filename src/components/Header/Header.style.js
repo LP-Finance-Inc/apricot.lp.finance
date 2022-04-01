@@ -7,6 +7,7 @@ const HeaderWrapper = styled.div`
     nav {
       padding: 15px 4px 15px 16px;
       justify-content: inherit !important;
+      border-bottom: 1px solid ${(props) => props.theme.body.BodyMain};
 
       .navbar-brand {
         flex-grow: 0 !important;

@@ -76,10 +76,6 @@ export const AssetsHeaderList = [
     id: 5,
     name: "Total borrow",
   },
-  {
-    id: 6,
-    name: "Borrow APY",
-  },
 ];
 
 export const TableTokenListApi = () => {
@@ -101,7 +97,6 @@ export const TableTokenListApi = () => {
           TotalSupply: PoolAssetsList[i].TotalSupply,
           SupplyAPY: PoolAssetsList[i].SupplyAPY,
           TotalBorrowed: PoolAssetsList[i].TotalBorrowed,
-          BorrowAPY: PoolAssetsList[i].BorrowAPY,
         });
       }
     }

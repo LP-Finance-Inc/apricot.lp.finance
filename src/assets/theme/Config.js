@@ -16,7 +16,7 @@ export const lightTheme = {
     BodyPrimary: "#fff",
     BodySecondary: "#8c8c8c",
     BodyMainLine: "#42f0db",
-    BodyPrimaryLine: "#22252e",
+    BodyPrimaryLine: "hsla(0,0%,89.8%,.4)",
     BodyNeutralAlt: "#1b1d23",
     BodyNeutral: "#0e1118",
     BodyOverlay: "#0e1118",
@@ -87,6 +87,9 @@ body {
     margin-left: auto;
     position: relative;
     background-image:url("/images/HomeBackground.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 h1,

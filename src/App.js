@@ -7,32 +7,9 @@ import SnackbarProviderMessage from "./components/SnackbarProviderMessage";
 import Snackbar from "./helper/Snackbar";
 import { getPoolAssetsInfoFun } from "./redux/actions/lp_function";
 
-import {
-  TokenID,
-  createAssetPoolLoader,
-  getConnection,
-  getPriceInfo,
-  ActionWrapper,
-  MINTS,
-  normalizePool,
-  Addresses,
-  PUBLIC_CONFIG,
-} from "@apricot-lend/sdk-ts";
-
 const App = () => {
   const dispatch = useDispatch();
 
-  const getInfo = async () => {
-    // get shared connection object
-    let connection = getConnection();
-
-    // pool info
-    let tokenId = TokenID.USDC;
-    let assetPoolLoader = await createAssetPoolLoader(connection);
-    console.log(await assetPoolLoader.getAssetPool(tokenId));
-  };
-
-  getInfo();
   useEffect(() => {
     dispatch(getPoolAssetsInfoFun());
   }, []);
