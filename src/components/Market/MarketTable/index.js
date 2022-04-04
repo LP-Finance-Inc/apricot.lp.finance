@@ -1,11 +1,10 @@
 import React from "react";
 import MarketTableWrapper from "./MarketTable.style";
-import { AssetsHeaderList, TableTokenListApi } from "../../../assets/api/Home";
+import { AssetsHeaderList } from "../../../assets/api/Home";
 import Loader from "../../Loader";
+import { numFormatter, calc } from "../../../helper";
 
-const MarketTable = ({ process }) => {
-  const PoolAssetsListApi = TableTokenListApi();
-
+const MarketTable = ({ progress, AssetsMarketList }) => {
   return (
     <MarketTableWrapper>
       <div className="container assets mt-lg-3 mt-md-3 mt-2 pt-lg-5 pt-md-5 pt-3 pb-5">
@@ -21,7 +20,7 @@ const MarketTable = ({ process }) => {
           <div className="row pl-lg-2 pr-lg-2 mt-3 assets_table">
             <div className="col-12">
               <div className="Table_card table-responsive-sm">
-                {process ? (
+                {progress ? (
                   <Loader />
                 ) : (
                   <table className="table mt-4">
@@ -37,8 +36,8 @@ const MarketTable = ({ process }) => {
                       </tr>
                     </thead>
                     <tbody>
-                      {PoolAssetsListApi &&
-                        PoolAssetsListApi.map((list) => {
+                      {AssetsMarketList &&
+                        AssetsMarketList.map((list) => {
                           return (
                             <tr key={list.id}>
                               <td>
@@ -46,34 +45,29 @@ const MarketTable = ({ process }) => {
                                   <img src={list.img} alt="Loading..." />
                                   <div className="token_name pl-3">
                                     <p>{list.AssetsName}</p>
-                                    {/* <span>$120.3</span> */}
                                   </div>
                                 </div>
                               </td>
                               <td>
                                 <div className="table_list">
-                                  <p>{list.LTV}%</p>
+                                  <p>{numFormatter(list.MarketDeposited)}</p>
                                 </div>
                               </td>
                               <td>
                                 <div className="table_list">
-                                  <p>
-                                    {list.TotalSupply} {list.AssetsName}
-                                  </p>
+                                  <p>{numFormatter(list.MarketBorrowed)}</p>
                                 </div>
                               </td>
                               <td>
                                 <div className="table_list">
-                                  <p>{list.SupplyAPY}%</p>
+                                  <p>{calc(list.DepositAPR)}%</p>
                                 </div>
                               </td>
-                              <td>
+                              {/* <td>
                                 <div className="table_list">
-                                  <p>
-                                    {list.TotalBorrowed} {list.AssetsName}
-                                  </p>
+                                  <p>{calc(list.BorrowedAPR)}%</p>
                                 </div>
-                              </td>
+                              </td> */}
                             </tr>
                           );
                         })}

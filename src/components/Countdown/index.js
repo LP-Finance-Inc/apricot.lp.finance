@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CountdownWrapper from "./Countdown.style";
 import { useDispatch } from "react-redux";
-import { getPoolAssetsInfo } from "../../utils/getPoolAssetsInfo";
+import { getAssetsMarketInfo } from "../../utils/getAssetsMarketInfo";
 
 const FULL_DASH_ARRAY = 283;
 
@@ -18,10 +18,10 @@ const Countdown = () => {
     try {
       timePassed = 0;
       timeLeft = TIME_LIMIT;
-      const PoolAssetsObj = await getPoolAssetsInfo();
+      const getAssetsObj = await getAssetsMarketInfo();
       dispatch({
-        type: "SEND_POOL_ASSETS_INFO",
-        payload: PoolAssetsObj,
+        type: "SET_ASSETS_MARKET_LIST",
+        payload: getAssetsObj,
       });
     } catch (error) {}
   };

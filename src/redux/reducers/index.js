@@ -1,10 +1,12 @@
 import { combineReducers } from "redux";
 import SnackbarReducer from "./SnackbarReducer";
-import PoolAssetsReducer from "./lp_Reducers/PoolAssetsReducer";
+import getAssetsMarketReducer from "./lp_Reducers/getAssetsMarketReducer";
+import getTokenPriceReducer from "./lp_Reducers/getTokenPriceReducer";
 
 const rootReducer = combineReducers({
   SnackbarReducer,
-  PoolAssetsReducer,
+  getAssetsMarketReducer,
+  getTokenPriceReducer,
 });
 
 export default rootReducer;

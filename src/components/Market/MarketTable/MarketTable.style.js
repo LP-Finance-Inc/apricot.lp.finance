@@ -4,9 +4,9 @@ const MarketTableWrapper = styled.div`
   .assets {
     .assets_card {
       border: 1px solid ${(props) => props.theme.body.BodyMainLine};
-      border-radius: 5px;
+      border-radius: 20px;
       backdrop: filer(20px);
-      background-color: rgba(31, 24, 37, 0.5);
+      background: #1b2020;
       padding: 40px 30px 16px;
 
       .title {
@@ -90,7 +90,7 @@ const MarketTableWrapper = styled.div`
                 }
 
                 &:hover {
-                  background: rgba(31, 24, 37, 0.8);
+                  background: rgba(255, 255, 255, 0.1);
                 }
               }
             }

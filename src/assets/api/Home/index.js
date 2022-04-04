@@ -1,5 +1,3 @@
-import { useSelector } from "react-redux";
-
 const point = "/images/tokens";
 
 export const TableTokenList = [
@@ -58,48 +56,22 @@ export const TableTokenList = [
 export const AssetsHeaderList = [
   {
     id: 1,
-    name: "Asset name",
+    name: "Asset",
   },
   {
     id: 2,
-    name: "LTV",
+    name: "Market Deposited",
   },
   {
     id: 3,
-    name: "Total supply",
+    name: "Market Borrowed",
   },
   {
     id: 4,
-    name: "Supply APY",
+    name: "Deposit APR",
   },
-  {
-    id: 5,
-    name: "Total borrow",
-  },
+  // {
+  //   id: 5,
+  //   name: "Borrow APR",
+  // },
 ];
-
-export const TableTokenListApi = () => {
-  const PoolAssetsState = useSelector((state) => state.PoolAssetsReducer);
-
-  const { PoolAssetsList } = PoolAssetsState;
-
-  console.log(PoolAssetsList);
-  console.log(PoolAssetsList.length);
-
-  var PoolAssetsListApi = [];
-
-  for (var i = 0; i < PoolAssetsList.length; i++) {
-    for (var j = 0; j < TableTokenList.length; j++) {
-      if (PoolAssetsList[i].AssetName === TableTokenList[j].AssetsName) {
-        PoolAssetsListApi.push({
-          ...TableTokenList[j],
-          LTV: PoolAssetsList[i].LTV,
-          TotalSupply: PoolAssetsList[i].TotalSupply,
-          SupplyAPY: PoolAssetsList[i].SupplyAPY,
-          TotalBorrowed: PoolAssetsList[i].TotalBorrowed,
-        });
-      }
-    }
-  }
-  return PoolAssetsListApi;
-};

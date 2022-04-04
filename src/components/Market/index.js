@@ -4,12 +4,14 @@ import MarketOverview from "./MarketOverview";
 import MarketTable from "./MarketTable";
 
 const Market = () => {
-  const PoolAssetsReducer = useSelector((state) => state.PoolAssetsReducer);
+  const getAssetsMarketReducer = useSelector(
+    (state) => state.getAssetsMarketReducer
+  );
 
   return (
     <>
       <MarketOverview />
-      <MarketTable {...PoolAssetsReducer} />
+      <MarketTable {...getAssetsMarketReducer} />
     </>
   );
 };
