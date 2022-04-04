@@ -23,7 +23,7 @@ const MarketTableWrapper = styled.div`
           );
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
-          font-size: 20px;
+          font-size: 1.4rem;
           font-weight: 700;
           line-height: 1.5715;
         }
@@ -46,7 +46,7 @@ const MarketTableWrapper = styled.div`
                     ${(props) => props.theme.body.BodyPrimaryLine};
                   vertical-align: middle !important;
                   color: ${(props) => props.theme.body.BodySecondary};
-                  font-size: 13px;
+                  font-size: 15px;
                   font-weight: 400;
                   line-height: 16px;
                   padding-bottom: 30px;
@@ -73,7 +73,7 @@ const MarketTableWrapper = styled.div`
 
                     p {
                       color: ${(props) => props.theme.body.BodyPrimary};
-                      font-size: 15px;
+                      font-size: 14px;
                       font-weight: 400;
                       line-height: 24px;
                     }
