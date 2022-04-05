@@ -46,11 +46,7 @@ export const TableTokenList = [
     img: point + "/USDC.png",
     AssetsName: "USDC",
   },
-  {
-    id: 10,
-    img: point + "/UST.png",
-    AssetsName: "UST",
-  },
+
 ];
 
 export const AssetsHeaderList = [
@@ -70,8 +66,5 @@ export const AssetsHeaderList = [
     id: 4,
     name: "Deposit APR",
   },
-  // {
-  //   id: 5,
-  //   name: "Borrow APR",
-  // },
+
 ];

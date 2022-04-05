@@ -2,7 +2,7 @@ import React from "react";
 import MarketTableWrapper from "./MarketTable.style";
 import { AssetsHeaderList } from "../../../assets/api/Home";
 import Loader from "../../Loader";
-import { numFormatter, calc } from "../../../helper";
+import { numFormatter, calc, CalcTwoDigit } from "../../../helper";
 
 const MarketTable = ({ progress, AssetsMarketList }) => {
   return (
@@ -50,12 +50,20 @@ const MarketTable = ({ progress, AssetsMarketList }) => {
                               </td>
                               <td>
                                 <div className="table_list">
-                                  <p>{numFormatter(list.MarketDeposited)}</p>
+                                  <p>
+                                    {list.AssetsName === "USDC"
+                                      ? `${CalcTwoDigit(list.MarketDeposited)}M`
+                                      : numFormatter(list.MarketDeposited)}
+                                  </p>
                                 </div>
                               </td>
                               <td>
                                 <div className="table_list">
-                                  <p>{numFormatter(list.MarketBorrowed)}</p>
+                                  <p>
+                                    {list.AssetsName === "USDC"
+                                      ? `${CalcTwoDigit(list.MarketBorrowed)}M`
+                                      : numFormatter(list.MarketBorrowed)}
+                                  </p>
                                 </div>
                               </td>
                               <td>
@@ -63,11 +71,6 @@ const MarketTable = ({ progress, AssetsMarketList }) => {
                                   <p>{calc(list.DepositAPR)}%</p>
                                 </div>
                               </td>
-                              {/* <td>
-                                <div className="table_list">
-                                  <p>{calc(list.BorrowedAPR)}%</p>
-                                </div>
-                              </td> */}
                             </tr>
                           );
                         })}
