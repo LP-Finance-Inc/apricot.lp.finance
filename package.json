@@ -6,7 +6,7 @@
   "module": "esnext",
   "dependencies": {
     "@apricot-lend/apricot": "^0.14.5",
-    "@apricot-lend/sdk-ts": "^0.16.27",
+    "@apricot-lend/sdk-ts": "^0.16.31",
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
     "@mui/material": "^5.4.4",

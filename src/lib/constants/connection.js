@@ -1,7 +1,7 @@
 import * as anchor from "@project-serum/anchor";
 const { Connection } = anchor.web3;
 
-const NETWORK = "https://api.devnet.solana.com";
+const NETWORK = "https://api.mainnet-beta.solana.com";
 
 const netConfig = "devnet";
 
