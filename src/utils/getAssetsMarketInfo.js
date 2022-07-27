@@ -5,9 +5,9 @@ import { connection } from "../lib/constants/connection";
 export const getAssetsMarketInfo = async () => {
   const newAssetsTokenMarket = [];
 
-  for (var i = 0; i < TableTokenList.length; i++) {
-    let assetPoolLoader = await createAssetPoolLoader(connection);
+  let assetPoolLoader = await createAssetPoolLoader(connection);
 
+  for (var i = 0; i < TableTokenList.length; i++) {
     const AssetsPoolInfoObj = await assetPoolLoader.getAssetPool(
       TableTokenList[i].AssetsName
     );

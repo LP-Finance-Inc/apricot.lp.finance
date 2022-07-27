@@ -1,9 +1,6 @@
 import * as anchor from "@project-serum/anchor";
 const { PublicKey } = anchor.web3;
 
-// NETWORK
-export const NETWORK = "https://api.mainnet-beta.solana.com"; // 'https://api.devnet.solana.com';
-
 export const convert_to_wei = (val) => (parseFloat(val) * 1e9).toString();
 export const convert_from_wei = (val) => parseFloat(val) / 1e9;
 
